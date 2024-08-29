@@ -1,0 +1,21 @@
+# recursive factorial functions 
+def fact(x:int) -> int:  # requires an integer parameter
+    if x > 1:
+        return x * fact(x-1)
+    else: 
+        return 1
+
+
+printstr("Please input an integer n: ")
+x = inputnum() # in Python: int(input())
+if x > 0 : 
+    printnum(fact(x))  # in Python  print(fact(x))
+elif x == 0 : 
+    printstr("fact(0) is 1")  
+else :
+    printstr("cannot compute fact(n) when n is negative\n")
+
+printstr("Bye ")
+    
+
+

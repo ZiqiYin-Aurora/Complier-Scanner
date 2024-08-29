@@ -1,0 +1,32 @@
+# computes the sum from 1 to n 
+ 
+
+def sum1(n):
+    j = 0
+    result = 0
+    while j != n :
+      result = result + j ; # !!! Error, ! not accepted by the scanner of Pym. 
+      j = j+1
+    return  result
+
+# ok to specify the parameter type and return type in function definition
+# if change to python replacing num with int, it is a perfect python program. 
+def sum2(n:num) -> num:
+    j = 0
+    result = 0
+    while j != n :
+      result = result + j
+      j = j+1
+    return  result
+
+def driver():
+    print("Please input a positive integer : ")
+    k = int(inputnum())  # python:   inputnum --> input()
+    # if change to python:  num2str(k) --> str(k),  printstr() and printnum --> print()
+    printstr("The sum from 1 to " + num2str(k) + " is : ")   
+    printstr("\n")
+    printnum(sum1(k)) # print the result in a line
+    printstr("\n")
+    printnum(sum2(k))
+
+driver()

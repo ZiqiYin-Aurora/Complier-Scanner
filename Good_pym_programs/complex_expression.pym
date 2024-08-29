@@ -1,0 +1,33 @@
+# Creating an array of 10 integers, with initial value 1. In C, it will be:  int arr[10] = {1}; 
+# global array
+# arr = [1]*10
+arr : num[10]
+
+def main():
+    # aaa = []
+    arr : num[20]  # Pym needs to know the size of an array object.
+    j = 0
+    while j<20 :
+        # aaa.append(j)
+        aaa[j] = j 
+        printnum(aaa[j])
+        printstr("\n")
+        j=j+1
+    j = 0
+	# do some computation without much meaning, just to test some expressions
+    print("the list aaa  will be changed \n")
+    while j<20 :
+		#  /* aaa[j] = aaa[j] + arr[j%10] */
+        # if j is a num but not an integer, j%10 will give error 
+        printstr(" int(j-(j/10)*10) == j%10" + " is ", num2str( j-(j/10)*10 == j%10 ) ) 
+        # in python3, 2/3 is 0.666..., while in python2, 2/3 is 0; in Pym, 2/3 is a num 2\3
+        printstr("\n j-(j/10)*10 is " + num2str( j-(j/10)*10))  
+        # print("\n j-int((j/10))*10 is " + num2str( j - int((j/10))*10 )  ) 
+        print("\n j%10 is " + str(j%10))
+        # aaa[j] = aaa[j] + arr[int((j-(j/10)*10) + 0)]  
+        # error if (j-(j/10)*10 + 0) is not an integer 
+        aaa[j] = aaa[j] + arr[(j-(j/10)*10 + 0)] 
+        printnum(aaa[j])
+        j=j+1
+
+main()
